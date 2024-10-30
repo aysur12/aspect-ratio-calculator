@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const secondNumber = parseFloat(secondInput.value);
 
     if (isNaN(firstNumber) || isNaN(secondNumber) || secondNumber === 0) {
-      output.innerHTML = 'Введите корректные значения';
+      output.innerHTML = "Введите корректные значения";
       return;
     }
 
-    const result = (firstNumber / secondNumber).toFixed(3);
-    output.innerHTML = result;
+    let result = firstNumber / secondNumber;
+    output.innerHTML = output.innerHTML = Number.isInteger(result) ? result : result.toFixed(3);
   };
 
   firstInput.addEventListener('input', aspectRatioCalculate);
